@@ -1,0 +1,203 @@
+:root {
+    --red: #f5503d;
+    --deep-red: #d22b20;
+    --white: #fbf1f4;
+}
+
+body {
+    background: var(--red);
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 1.5em;
+    max-width: 1200px;
+}
+
+.timer {
+    text-align: center;
+    color: var(--white);
+    font-family: 'Roboto';
+}
+
+.timer__title {
+    font-family: 'Dancing Script';
+    font-size: 50px;
+    cursor: pointer;
+    color: var(--white);
+    text-decoration: none;
+}
+
+.timer__title:before {
+    content: '';
+    padding: 30px;
+    background: url("content/pomodoro1.png") no-repeat;
+    background-size: 40px 40px;
+    background-position: center;
+}
+
+.timer_animation {
+    margin: 110px auto -150px;
+    position: relative;
+}
+
+.timer_animation_circle {
+    position: relative;
+    top: -160px;
+    margin: 0 auto;
+}
+
+.timer__content_wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.timer_animation_time {
+    font-size: 45px;
+    font-weight: 900;
+
+}
+
+.timer__time {
+    font-size: 25px;
+    margin: 5px 20px;
+}
+
+.timer__content_cycle_n {
+    background: var(--white);
+    color: var(--red);
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.timer__content_cycle {
+    margin: 30px 0 10px;
+}
+
+.timer__modal-window {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(133, 50, 50, 0.9);
+    animation: back 500ms linear;
+}
+
+@keyframes back {
+    from {
+        background: rgba(133, 50, 50, 0);
+    }
+    to {
+        background: rgba(133, 50, 50, 0.9);
+    }
+}
+
+.timer__modal-window_content {
+    text-align: center;
+    margin-top: 20%;
+    font-size: 30px;
+}
+
+
+.timer__control_btn {
+    outline: none;
+    background: var(--deep-red);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: var(--white);
+    font-family: 'Roboto';
+    text-transform: lowercase;
+    margin: 30px 5px;
+    cursor: pointer;
+}
+
+.timer__control_btn:hover {
+    background: #c70901;
+}
+
+.timer__control_break, .timer__control_cycle{
+    color: #c3c3c3;
+    padding: 10px 25px;
+    background: url("content/arrow.svg") no-repeat;
+    background-size: 15px 15px;
+    background-position: 80px center;
+    border: 2px solid rgba(221, 221, 221, 0.4);
+}
+.timer__control_break:hover, .timer__control_cycle:hover {
+    color: #ffffff;
+    background: url("content/arrow.svg") no-repeat;
+    background-size: 15px 15px;
+    background-position: right center;
+    transition: 1s;
+}
+
+.hidden {
+    display: none;
+}
+
+
+#countdown {
+    position: relative;
+
+}
+
+#countdown-number {
+    color: white;
+    display: inline-block;
+    line-height: 40px;
+}
+
+svg {
+    width: 280px;
+    height: 280px;
+    transform: rotateY(-180deg) rotateZ(-90deg);
+}
+
+svg circle {
+    stroke-dasharray: 113px;
+    stroke-dashoffset: 0px;
+    stroke-linecap: round;
+    stroke-width: 0.5px;
+    stroke: var(--white);
+    fill: none;
+    animation: countdown 6s linear infinite forwards;
+
+    transform: scale(7);
+}
+
+@keyframes countdown {
+    from {
+        stroke-dashoffset: 0px;
+    }
+    to {
+        stroke-dashoffset: 113px;
+    }
+}
+
+.no_animation {
+    animation: none;
+}
+
+
+@media screen and (max-width: 430px) {
+    .timer__title{
+        font-size: 34px;
+    }
+    svg circle {
+        transform: scale(6);
+    }
+    svg {
+        width: 230px;
+        height: 230px
+    }
+    .timer_animation_circle{
+        top: -140px;
+    }
+    .timer__content_wrapper{
+        margin-top: 20px;
+    }
+}

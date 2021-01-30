@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Roboto:wght@400&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="timer">
+        <div class="timer__title">
+            Pomodoro Timer
+        </div>
+        <div class="timer__content">
+            <div class="timer__animation">
+                <div class="timer__animation_time">
+                    <span class="timer__animation_time_minutes">25</span>
+                    :
+                    <span class="timer__animation_time_seconds">00</span>
+                </div>
+                <div class="timer__animation_circle">
+                    <div id="countdown">
+                        <div id="countdown-number"></div>
+                        <svg>
+                            <circle r="18" cx="20" cy="20"></circle>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="timer__content_wrapper">
+                <label> Time for study
+                    <div class="timer__content_time  timer__time">
+                        <span class="timer__content_time_minutes timer__minutes">25</span>
+                        :
+                        <span class="timer__content_time_seconds">00</span>
+                    </div>
+                </label>
+                <label> Time for break
+                    <div class="timer__content_break  timer__time">
+                        <span class="timer__content_break_minutes timer__minutes">5</span>
+                        :
+                        <span class="timer__content_break_seconds">00</span>
+                    </div>
+                </label>
+            </div>
+
+            <div class="timer__content_cycle"><span class="timer__content_cycle_n">0</span></div>
+            <div class="timer__content_text"></div>
+        </div>
+        <div class="timer__modal-window timer__modal-window_break hidden">
+            <div class="timer__modal-window_content">
+                <div class="timer__modal-window-content_text">let break</div>
+                <button class="timer__control_break timer__content_btn">break</button>
+            </div>
+        </div>
+        <div class="timer__modal-window hidden timer__modal-window_cycle">
+            <div class="timer__modal-window_content">
+                <div class="timer__modal-window-content_text">You can start next session!</div>
+                <button class="timer__control_cycle timer__content_btn">cycle</button>
+            </div>
+        </div>
+
+        <div class="timer__control">
+            <button class="timer__control_start timer__control_btn">start</button>
+            <button class="timer__control_reset timer__control_btn">reset</button>
+        </div>
+    </div>
+</div>
+</body>
+<script src="main.js"></script>
+</html>
